@@ -1,7 +1,7 @@
 import React from 'react'
 function Banner(){
     return(
-        <div className='h-[20vh] md:h-[60vh] bg-center bg-no-repeat flex items-end'
+        <div className='h-[30vh] md:h-[60vh] bg-center bg-no-repeat flex items-end'
         style={{
             backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ_5BWwYPV6VhploQjsDPMNH_JVHgG-W7QUA&usqp=CAU)'
         }}>
