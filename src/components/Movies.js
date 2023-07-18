@@ -23,15 +23,17 @@ if(pageNum>1){
   };
                   //watchlist Handlers
 
-                  const addToWatchList=(id)=>{
-                         const newWatchList=[...watchList,id]
+                  const addToWatchList=(movie)=>{
+                         const newWatchList=[...watchList,movie]
                          setWatchList(newWatchList);
+                         localStorage.setItem('imdb',JSON.stringfy(watchList))
                   };
-                         const removeFromWatchList = (id) => {
-                         const filteredWatchList=watchList.filter((watchlistID)=>{
-                            return (watchlistID != id);
+                         const removeFromWatchList = (movie) => {
+                         const filteredWatchList=watchList.filter((m)=>{
+                            return (m.id!=movie.id);
                          });
                          setWatchList( filteredWatchList);
+                         localStorage.setItem('imdb',JSON.stringify('watchlist'))
                         };
 //Hovering on Movie cards//
 
@@ -47,7 +49,12 @@ if(pageNum>1){
                   
 
     useEffect(() => {
-        (function(){  axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=2517cafdf89d5164a6df39d10b62ab27&page=${pageNum}`).then((res) => {
+        (function(){  
+            let moviesfromLS=localStorage.getItem('imdb')
+            moviesfromLS=JSON.parse(moviesfromLS) || []
+            setWatchList(moviesfromLS)
+
+            axios.get(`https://api.themoviedb.org/3/trending/movie/day?api_key=2517cafdf89d5164a6df39d10b62ab27&page=${pageNum}`).then((res) => {
             setMovies(res.data.results);
         });
     })();
@@ -75,11 +82,11 @@ if(pageNum>1){
 <div className="text-2xl p-2 bg-gray=900 rounded-2xl absolute right-2 top-2 "
 style={{display:hovered==movie.id ? 'block' : 'none'}}> 
              {
-                watchList.includes(movie.id)==false ?(
+                watchList.includes(movie)==false ?(
                 
-<div onClick={()=>addToWatchList(movie.id)}>😊</div>)  
+<div onClick={()=>addToWatchList(movie)}>😊</div>)  
 :(
-    <div onClick={()=>removeFromWatchList(movie.id)}>❌</div>
+    <div onClick={()=>removeFromWatchList(movie)}>❌</div>
     
 )
     }
@@ -93,6 +100,7 @@ style={{display:hovered==movie.id ? 'block' : 'none'}}>
         );
     })
 }
+
                 {/* <div className="w-[200px] h-[30vh] bg-center bg-cover rounded-xl m-4 md:h-[40vh] md:w-[200px] hover:scale-110 duration-300 relative flex-items-end" style={{
                     backgroundImage: `url(https://m.media-amazon.com/images/I/61sfGQJJcrL._AC_UL480_FMwebp_QL65_.jpg)`
                 }}>
@@ -104,6 +112,7 @@ style={{display:hovered==movie.id ? 'block' : 'none'}}>
                 backgroundImage:`url(https://m.media-amazon.com/images/I/61sfGQJJcrL._AC_UL480_FMwebp_QL65_.jpg)`}}>
 
                 </div> */} 
+                
             </div>
             <Pagination pageNumProp={pageNum} onNextProp={onNext} onPrevProp={onPrev}></Pagination>
         </div>
