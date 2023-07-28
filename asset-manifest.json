@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Smartysidd/IMDB-PROJECT/static/css/main.83950be5.css",
+    "main.js": "/Smartysidd/IMDB-PROJECT/static/js/main.99da2f46.js",
+    "index.html": "/Smartysidd/IMDB-PROJECT/index.html",
+    "main.83950be5.css.map": "/Smartysidd/IMDB-PROJECT/static/css/main.83950be5.css.map",
+    "main.99da2f46.js.map": "/Smartysidd/IMDB-PROJECT/static/js/main.99da2f46.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83950be5.css",
+    "static/js/main.99da2f46.js"
+  ]
+}
