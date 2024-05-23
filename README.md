@@ -4,15 +4,15 @@
 
 **Features:**
 ![image](https://github.com/Smartysidd/IMDB-PROJECT/assets/117941758/bee01c1e-726d-41ae-9805-40ff5f1aacdb)
-1.IMDB Clone Development: Created with HTML, CSS, JavaScript, and React, increasing engagement by 25%.
+1.**IMDB Clone Development:** Created with HTML, CSS, JavaScript, and React, increasing engagement by 25%.
 
-2.Movie Search with Genre Filters: Enhanced user satisfaction by 30%.
+2.**Movie Search with Genre Filters:** Enhanced user satisfaction by 30%.
 
-3.Smooth Pagination: Streamlined navigation, reducing load time by 40%.
+3.**Smooth Pagination**: Streamlined navigation, reducing load time by 40%.
 
-4.Intuitive Rating System: Boosted user feedback by 20%.
+4.**Intuitive Rating System:** Boosted user feedback by 20%.
 
-5.Responsive Design and Personalized Experiences: Executed full-stack development, resulting in 15% higher user retention.
+5.**Responsive Design and Personalized Experiences:** Executed full-stack development, resulting in 15% higher user retention.
 
 **Tech Stack:**
 1.HTML/CSS
